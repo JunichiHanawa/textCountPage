@@ -1,0 +1,72 @@
+body{
+    text-align: center;
+    font-family: "Helvetica Neue", Arial, 
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+    background-color: rgb(240, 238, 238);
+}
+
+.title{
+    width: 40%;
+    margin: 0 auto;
+
+    border-bottom: solid 5px goldenrod;
+    border-radius: 2px;
+    /* height: 5px; */
+}
+
+textarea{
+    background-color: rgba(230, 229, 209, 0.74);
+    font-size: larger;
+    color: rgb(197, 195, 81);
+    border: solid 3px rgb(224, 224, 142);
+    border-radius: 0.5em;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 0.5em;
+    line-height: 1.4em; /*行間の調整*/
+
+}
+
+
+textarea:focus{
+    outline: none;/* 書くとき外の枠線邪魔なので消す */
+    background-color: #4b4b49;
+    caret-color: #f7d516; /*カーソルの色*/
+
+}
+
+p{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: larger;
+    border-bottom: dotted 5px rgba(223, 213, 82, 0.849);
+}
+
+.btn{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    padding: 0.5em, 1em;
+    font-size: large;
+    text-decoration: none;
+    color: #f7d516;
+    border: dashed 1px #f5d834;
+    background: #4b4b49;
+    border-radius: 3px;
+    transition: .5s;
+}
+
+.btn:hover{
+    background: #e0c52b;
+    color: #fff;
+}
+
+.btn:focus{
+    outline: none;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="text_size_count.css">
+    <title>字数カウント</title>
+
+</head>
+<body>
+
+    <h1 class="title">字数カウント</h1>
+
+    <br>
+    <form name="textForm">
+    <textarea name="textWrite" id="text-area" rows="15" cols="70" onKeyUp="textLengthShow(value);"></textarea>
+    </form>
+    
+    <p id="text-size">字数(改行あり)：0文字</p>
+    <p id="text-size-noLine">字数(改行なし)：0文字</p>
+    <button id="reset-btn" class="btn">リセット</button>
+    <button id="copy-btn" class="btn">コピー</button>
+
+    <script type="text/javascript" src="text_size_count.js"></script>
+</body>
+</html>

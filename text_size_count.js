@@ -14,6 +14,20 @@ function textLengthShow(str){
 }
 
 
+//色設定ボタン処理
+var colorBtn = document.getElementById('color-btn');
+
+colorBtn.addEventListener('click', function(){
+    console.log('color')
+}, false)
+
+//字数カウント設定ボタン処理
+var countSetBtn = document.getElementById('count-set-btn');
+
+countSetBtn.addEventListener('click', function(){
+    console.log('count-set')
+}, false)
+
 //リセットボタン処理
 var resetBtn = document.getElementById('reset-btn');
 

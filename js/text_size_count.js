@@ -43,7 +43,18 @@ countSetBtn.addEventListener('click', function () {
 var countSetBtn = document.getElementById('color-btn');
 
 countSetBtn.addEventListener('click', function () {
-    console.log('count-set')
+    //textareaのスタイル情報
+    var textareaStyle = document.getElementById('text-area').style;
+    //背景色
+    var backgroundColor = document.getElementById('input-back-color').value;
+    //文字色
+    var textColor = document.getElementById('input-text-color').value;
+    //カーソル色
+    var cursorColor = document.getElementById('input-cursor-color').value;
+
+    textareaStyle.background = backgroundColor;
+    textareaStyle.color = textColor;
+    textareaStyle.caretColor = cursorColor;
 }, false)
 
 //リセットボタン処理

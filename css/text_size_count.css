@@ -18,9 +18,10 @@ body{
 }
 
 textarea{
-    background-color: rgba(230, 229, 209, 0.74);
+    background-color: #4b4b49;
     font-size: larger;
     color: rgb(197, 195, 81);
+    caret-color: #f7d516;
     border: solid 3px rgb(224, 224, 142);
     border-radius: 0.5em;
     width: 80%;
@@ -33,9 +34,6 @@ textarea{
 
 textarea:focus{
     outline: none;/* 書くとき外の枠線邪魔なので消す */
-    background-color: #4b4b49;
-    caret-color: #f7d516; /*カーソルの色*/
-
 }
 
 p{

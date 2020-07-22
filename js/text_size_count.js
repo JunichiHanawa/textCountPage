@@ -1,77 +1,46 @@
+//初期設定
+var linefeed = 0 //改行
+var space = 1 //スペース
+var harf = 1 //半角
+
 //カウント
 function textLengthShow(str) {
 
-    //文字数のみ
+    //改行の設定
     var count = 0;
     for (let i = 0; i < str.length; i++) {
         if (str[i] == '\n') {
-            count += 1;
+            if(linefeed == 0){
+                //改行なしで文字だけの時
+                count -= 1;
+            }else{
+                count += linefeed - 1;
+            }
         }
     }
 
-    document.getElementById('text-size').innerHTML = "字数：" + (str.length - count) + "文字";
+    console.log(typeof linefeed);
+    document.getElementById('text-size').innerHTML = "字数：" + (str.length + count) + "文字";
 
 }
 
 
-//色設定ボタン処理
-// $(function () {
-//     $("color-btn").click(
-//         function () {
-//             //キーボード操作などにより、オーバーレイが多重起動するのを防止する
-//             $(this).blur();	//ボタンからフォーカスを外す
-//             if ($("#modal-overlay")[0]) return false;		//新しくモーダルウィンドウを起動しない [下とどちらか選択]
-//             //if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;		//現在のモーダルウィンドウを削除して新しく起動する [上とどちらか選択]
-
-//             //オーバーレイ用のHTMLコードを、[body]内の最後に生成する
-//             $("body").append('<div id="modal-overlay"></div>');
-
-//             //[$modal-overlay]をフェードインさせる
-//             $("#modal-overlay").fadeIn("slow");
-
-//             //[$modal-content]をフェードインさせる
-//             $("#modal-content").fadeIn("slow");
-
-//             //[#modal-overlay]、または[#modal-close]をクリックしたら…
-//             $("#modal-overlay,#modal-close").unbind().click(function () {
-
-//                 //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
-//                 $("#modal-content,#modal-overlay").fadeOut("slow", function () {
-
-//                     //[#modal-overlay]を削除する
-//                     $('#modal-overlay').remove();
-
-//                 });
-
-//             });
-//         });
-// });
-
-// //リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
-// $(window).resize(centeringModalSyncer);
-
-// //センタリングを実行する関数
-// function centeringModalSyncer() {
-
-//     //画面(ウィンドウ)の幅、高さを取得
-//     var w = $(window).width();
-//     var h = $(window).height();
-
-//     // コンテンツ(#modal-content)の幅、高さを取得
-//     // jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
-//     //		var cw = $( "#modal-content" ).outerWidth( {margin:true} );
-//     //		var ch = $( "#modal-content" ).outerHeight( {margin:true} );
-//     var cw = $("#modal-content").outerWidth();
-//     var ch = $("#modal-content").outerHeight();
-
-//     //センタリングを実行する
-//     $("#modal-content").css({ "left": ((w - cw) / 2) + "px", "top": ((h - ch) / 2) + "px" });
-
-// }
-
 
 //字数カウント設定ボタン処理
 var countSetBtn = document.getElementById('count-set-btn');
+
+countSetBtn.addEventListener('click', function () {
+    //改行
+    linefeed = parseInt(document.getElementById('input-linefeed').value);
+    //スペース
+    space = parseInt(document.getElementById('input-space').value);
+    //半角
+    harf = parseInt(document.getElementById('input-harf').value);
+
+}, false)
+
+//色設定ボタン処理
+var countSetBtn = document.getElementById('color-btn');
 
 countSetBtn.addEventListener('click', function () {
     console.log('count-set')

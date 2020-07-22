@@ -1,26 +1,46 @@
 //初期設定
 var linefeed = 0 //改行
 var space = 1 //スペース
-var harf = 1 //半角
+var harf = 1.0 //半角
 
 //カウント
 function textLengthShow(str) {
 
-    //改行の設定
-    var count = 0;
+    var LFCount = 0; //改行の文字数
+    var spaceCount = 0; //スペースの文字数
+    var harfCount = 0; //半角の文字数
+
+    //各文字に対しての処理
     for (let i = 0; i < str.length; i++) {
+
+        
         if (str[i] == '\n') {
-            if(linefeed == 0){
+            //改行の設定
+            if (linefeed == 0){
                 //改行なしで文字だけの時
-                count -= 1;
+                LFCount -= 1;
             }else{
-                count += linefeed - 1;
+                LFCount += linefeed - 1;
             }
+        }else if (str[i] == '　'){
+            //全角スペースの設定
+            if (space == 0){
+                //元々スペースは一文字扱いなのでその分を減らす
+                spaceCount -= 1;
+            }else{
+                spaceCount += space - 1;
+            }
+        }else if (str[i].match(/^[\x20-\x7e]*$/)){
+            //半角英数字の設定
+            harfCount += -(1 - harf);
+            console.log(harfCount);
         }
     }
+    //文字の長さの計算
+    var resultTextLength = str.length + LFCount + spaceCount + harfCount;
 
     console.log(typeof linefeed);
-    document.getElementById('text-size').innerHTML = "字数：" + (str.length + count) + "文字";
+    document.getElementById('text-size').innerHTML = "字数：" + resultTextLength + "文字";
 
 }
 
@@ -35,7 +55,7 @@ countSetBtn.addEventListener('click', function () {
     //スペース
     space = parseInt(document.getElementById('input-space').value);
     //半角
-    harf = parseInt(document.getElementById('input-harf').value);
+    harf = parseFloat(document.getElementById('input-harf').value);
 
 }, false)
 

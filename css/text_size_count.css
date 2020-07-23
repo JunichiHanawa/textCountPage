@@ -45,6 +45,7 @@ p{
     border-bottom: solid 5px rgba(223, 213, 82, 0.849);
 }
 
+
 .btn{
     margin-top: 2px;
     margin-bottom: 2px;
@@ -68,6 +69,7 @@ p{
 
 .btn:focus{
     outline: none;
+
 }
 
 /* 設定ボタンのデザイン */
@@ -102,5 +104,4 @@ label{
 .color-input{
     border: none;
 }
-
 

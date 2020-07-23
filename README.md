@@ -1,3 +1,3 @@
 # textCountPage
 
-![textCountPage](image_for_readme/textCount.png)
+![textCountPage](https://github.com/kikuchiTakuya/textCountPage/blob/dev/image_for_readme/textcount.png)

@@ -16,11 +16,35 @@
     <textarea name="textWrite" id="text-area" rows="15" cols="70" onKeyUp="textLengthShow(value);"></textarea>
     </form>
     
-    <p id="text-size">字数(改行あり)：0文字</p>
-    <p id="text-size-noLine">字数(改行なし)：0文字</p>
+    <!-- 設定する部分 -->
+    <label>改行<input type="number" class="setting-input" id="input-linefeed" name="linefeed" value="0"></label>
+    <label>スペース<input type="number" class="setting-input" id="input-space" name="space" value="1"></label>
+    <label>半角<input type="number" class="setting-input" id="input-harf" name="space" step="0.5" value="1"></label>
+    <button id="count-set-btn" class="btn set-btn">更新</button>
+
+    <br>
+
+    <label>背景色<input type="color" class="setting-input color-input" id="input-back-color" name="linefeed" value="#4b4b49"></label>
+    <label>文字色<input type="color" class="setting-input color-input" id="input-text-color" name="space" value="#c5c351"></label>
+    <label>カーソル色<input type="color" class="setting-input color-input" id="input-cursor-color" name="space" value="#f7d516"></label>
+    <button id="color-btn" class="btn set-btn">更新</button>
+    <!-- 字数を表示する部分 -->
+    <p id="text-size">字数：0文字</p>
+    <!-- ボタン -->
+    
+    
     <button id="reset-btn" class="btn">リセット</button>
     <button id="copy-btn" class="btn">コピー</button>
 
+
+    <!-- 色設定用 -->
+    <!-- <div id="modal-content">
+        <p>色を設定できます</p>
+        <p><a id="modal-close" class="modal-link-button">設定完了</a></p>
+    </div> -->
+    
     <script type="text/javascript" src="js/text_size_count.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
 </body>
 </html>

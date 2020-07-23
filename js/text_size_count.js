@@ -45,7 +45,10 @@ function textLengthShow(str) {
 
 }
 
-
+//設定完了のポップアップ
+function donePopUp(){
+    alert('設定完了');
+}
 
 //字数カウント設定ボタン処理
 var countSetBtn = document.getElementById('count-set-btn');
@@ -57,6 +60,8 @@ countSetBtn.addEventListener('click', function () {
     space = parseInt(document.getElementById('input-space').value);
     //半角
     harf = parseFloat(document.getElementById('input-harf').value);
+    //設定完了のポップアップ
+    donePopUp();
 
 }, false)
 
@@ -76,6 +81,10 @@ countSetBtn.addEventListener('click', function () {
     textareaStyle.background = backgroundColor;
     textareaStyle.color = textColor;
     textareaStyle.caretColor = cursorColor;
+
+    //設定完了のポップアップ
+    donePopUp();
+
 }, false)
 
 //リセットボタン処理

@@ -1,7 +1,7 @@
 //初期設定
-var linefeed = 0 //改行
-var space = 1 //スペース
-var harf = 1.0 //半角
+var linefeed = 0; //改行
+var space = 1; //スペース
+var harf = 1.0; //半角
 
 //カウント
 function textLengthShow(str) {
